@@ -36,6 +36,7 @@ $banner-height: 80vh;
 
   .container {
     width: 90vw;
+    margin-top: 10%;
     height: 60%;
     max-width: 1120px;
     display: flex;
@@ -51,6 +52,8 @@ $banner-height: 80vh;
     .content {
       width: 50%;
       color: $white;
+      display: flex;
+      flex-direction: column;
 
       .header {
         font-size: 48px;
@@ -64,7 +67,10 @@ $banner-height: 80vh;
       }
 
       .filter-container {
-        margin-top: 80px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
 
         .title {
           font-size: 16px;

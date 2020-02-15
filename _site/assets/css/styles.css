@@ -8,17 +8,17 @@ body { margin: 0; background: #F5F5F5; font-family: Lato, sans-serif; display: f
 
 .banner .ellipsis { height: 100vw; width: 100vw; border-radius: 50%; background: #E49691; position: absolute; bottom: -50vw; right: -50vw; }
 
-.banner .container { width: 90vw; height: 60%; max-width: 1120px; display: flex; justify-content: space-around; z-index: 1; position: relative; }
+.banner .container { width: 90vw; margin-top: 10%; height: 60%; max-width: 1120px; display: flex; justify-content: space-around; z-index: 1; position: relative; }
 
 .banner .container .woman-img { width: 45%; margin-top: auto; }
 
-.banner .container .content { width: 50%; color: #F5F5F5; }
+.banner .container .content { width: 50%; color: #F5F5F5; display: flex; flex-direction: column; }
 
 .banner .container .content .header { font-size: 48px; font-weight: bold; }
 
 .banner .container .content .subheader { font-size: 24px; margin-top: 10px; font-weight: 200; }
 
-.banner .container .content .filter-container { margin-top: 80px; }
+.banner .container .content .filter-container { flex-grow: 1; display: flex; flex-direction: column; justify-content: flex-end; }
 
 .banner .container .content .filter-container .title { font-size: 16px; font-style: normal; font-weight: normal; margin-bottom: 10px; }
 
