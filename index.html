@@ -1,0 +1,46 @@
+---
+layout: default
+title: Women Who China
+people: site.data.people
+---
+
+<div class="banner">
+  <div class="ellipsis"></div>
+
+  <div class="container">
+
+    <!-- Left Side Content Container -->
+    <div class="content">
+      <div class="header">The Women of China Digital Marketing</div>
+      <div class="subheader">Showcasing the women who dominate the digital marketing industry in China.</div>
+
+      <!-- Filter Container -->
+      <div class="filter-container">
+        <div class="title">SELECT A CATEGORY</div>
+        <div class="box" id="filter">
+          <p>All categories</p>
+          <div class="dots"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side Image -->
+    <img class="woman-img" src="../assets/images/woman.svg" alt="Women who China image">
+  </div>
+</div>
+
+<div class="results">
+  <div class="title">SHOWING {{site.data.people.size}} RESULTS</div>
+
+  <div class="container">
+    {% for item in site.data.people %}
+    <div class="box" data-id="{{item.id}}">
+      <img class="avatar" src="{{ item.image }}" alt="{{item.name}}">
+      <div class="info">
+        <div class="name">{{item.name}}</div>
+        <div class="category">{{item.category}}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

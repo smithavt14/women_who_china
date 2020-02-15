@@ -1,0 +1,65 @@
+@font-face { font-family: Lato; src: url(/assets/fonts/Lato-Regular.ttf); }
+
+@font-face { font-family: Lato Bold; src: url(/assets/fonts/Lato-Bold.ttf); font-weight: bold; }
+
+body { margin: 0; background: #F5F5F5; font-family: Lato, sans-serif; display: flex; flex-direction: column; align-items: center; }
+
+.banner { height: 80vh; width: 100vw; background: #C65E57; position: relative; display: flex; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+.banner .ellipsis { height: 100vw; width: 100vw; border-radius: 50%; background: #E49691; position: absolute; bottom: -50vw; right: -50vw; }
+
+.banner .container { width: 90vw; height: 60%; max-width: 1120px; display: flex; justify-content: space-around; z-index: 1; position: relative; }
+
+.banner .container .woman-img { width: 45%; margin-top: auto; }
+
+.banner .container .content { width: 50%; color: #F5F5F5; }
+
+.banner .container .content .header { font-size: 48px; font-weight: bold; }
+
+.banner .container .content .subheader { font-size: 24px; margin-top: 10px; font-weight: 200; }
+
+.banner .container .content .filter-container { margin-top: 80px; }
+
+.banner .container .content .filter-container .title { font-size: 16px; font-style: normal; font-weight: normal; margin-bottom: 10px; }
+
+.banner .container .content .filter-container .box { height: 50px; width: 70%; background: #F5F5F5; border-radius: 5px; display: flex; justify-content: space-between; align-items: center; padding: 0 10px; box-sizing: border-box; color: rgba(0, 0, 0, 0.5); box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25); transition: all .25s linear; }
+
+.banner .container .content .filter-container .box:hover { box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25); cursor: pointer; }
+
+.banner .container .content .filter-container .box .dots { content: ""; height: 4px; width: 4px; border-radius: 50%; background: #C65E57; position: relative; }
+
+.banner .container .content .filter-container .box .dots:before { content: ""; position: absolute; height: 4px; width: 4px; border-radius: 50%; background: #C65E57; top: 10px; }
+
+.banner .container .content .filter-container .box .dots:after { content: ""; position: absolute; height: 4px; width: 4px; border-radius: 50%; background: #C65E57; top: -10px; }
+
+.results { width: 90vw; max-width: 1120px; display: flex; flex-direction: column; justify-content: center; }
+
+.results .title { font-size: 24px; color: #353636; margin: 40px 0 24px 0; }
+
+.results .container { display: flex; justify-content: space-between; flex-wrap: wrap; }
+
+.results .container .box { height: 125px; width: 350px; background: white; box-sizing: border-box; display: flex; align-items: center; box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25); border-radius: 10px; margin: 16px 0; padding: 0 24px; transition: all .25s linear; }
+
+.results .container .box:hover { box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25); cursor: pointer; }
+
+.results .container .box .avatar { height: 88px; width: 88px; border-radius: 50px; object-fit: cover; }
+
+.results .container .box .info { margin-left: 16px; color: #353636; }
+
+.results .container .box .info .name { font-size: 20px; font-weight: bold; }
+
+@font-face { font-family: Lato; src: url(/assets/fonts/Lato-Regular.ttf); }
+
+@font-face { font-family: Lato Bold; src: url(/assets/fonts/Lato-Bold.ttf); font-weight: bold; }
+
+.footer__container { margin-top: 40px; height: 150px; width: 100vw; background: #C65E57; display: flex; justify-content: center; }
+
+.footer__container .container { max-width: 1120px; width: 90vw; display: flex; justify-content: space-between; align-items: center; }
+
+.footer__container .container .note { color: #F5F5F5; }
+
+.footer__container .container .submit-btn { padding: 20px; background: #F5F5F5; color: #C65E57; font-weight: bold; border-radius: 10px; display: flex; justify-content: center; align-items: center; }
+
+.footer__container .container .submit-btn:hover { cursor: pointer; }
+
+/*# sourceMappingURL=styles.css.map */
