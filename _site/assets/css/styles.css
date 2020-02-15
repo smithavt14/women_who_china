@@ -8,7 +8,7 @@ body { margin: 0; background: #F5F5F5; font-family: Lato, sans-serif; display: f
 
 .banner .ellipsis { height: 100vw; width: 100vw; border-radius: 50%; background: #E49691; position: absolute; bottom: -50vw; right: -50vw; }
 
-.banner .container { width: 90vw; margin-top: 10%; height: 60%; max-width: 1120px; display: flex; justify-content: space-around; z-index: 1; position: relative; }
+.banner .container { width: 90vw; margin-top: 10%; height: 60%; max-width: 1120px; display: flex; justify-content: space-between; z-index: 1; position: relative; }
 
 .banner .container .woman-img { width: 45%; margin-top: auto; }
 
@@ -58,8 +58,18 @@ body { margin: 0; background: #F5F5F5; font-family: Lato, sans-serif; display: f
 
 .footer__container .container .note { color: #F5F5F5; }
 
-.footer__container .container .submit-btn { padding: 20px; background: #F5F5F5; color: #C65E57; font-weight: bold; border-radius: 10px; display: flex; justify-content: center; align-items: center; }
+.footer__container .container .submit-btn { padding: 20px; background: #F5F5F5; color: #C65E57; font-weight: bold; border-radius: 10px; display: flex; justify-content: center; align-items: center; box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25); transition: all .25s linear; }
 
-.footer__container .container .submit-btn:hover { cursor: pointer; }
+.footer__container .container .submit-btn:hover { box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25); cursor: pointer; }
+
+.header__container { position: absolute; top: 0; height: 120px; width: 100vw; display: flex; justify-content: center; z-index: 2; }
+
+.header__container .container { max-width: 1120px; width: 90vw; display: flex; justify-content: space-between; align-items: center; }
+
+.header__container .container .logo { height: 40px; width: 80px; background: white; border-radius: 10px; }
+
+.header__container .container .submit-btn { padding: 16px; background: #F5F5F5; color: #C65E57; font-weight: bold; border-radius: 10px; display: flex; justify-content: center; align-items: center; box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25); transition: all .25s linear; }
+
+.header__container .container .submit-btn:hover { box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25); cursor: pointer; }
 
 /*# sourceMappingURL=styles.css.map */

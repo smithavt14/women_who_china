@@ -1,3 +1,42 @@
 .header__container {
+  position: absolute;
+  top: 0;
+  height: 120px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
 
+  .container {
+    max-width: 1120px;
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      height: 40px;
+      width: 80px;
+      background: white;
+      border-radius: 10px;
+    }
+
+    .submit-btn {
+      padding: 16px;
+      background: $white;
+      color: $dark-red;
+      font-weight: bold;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25);
+      transition: all .25s linear;
+
+      &:hover {
+        box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+      }
+    }
+  }
 }
