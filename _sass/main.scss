@@ -62,70 +62,18 @@ $banner-height: 80vh;
 
       .subheader {
         font-size: 24px;
-        margin-top: 10px;
+        margin-top: 16px;
         font-weight: 200;
       }
 
-      .filter-container {
+      .title {
         flex-grow: 1;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: normal;
+        margin-bottom: 10px;
         display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-
-        .title {
-          font-size: 16px;
-          font-style: normal;
-          font-weight: normal;
-          margin-bottom: 10px;
-        }
-
-        .box {
-          height: 50px;
-          width: 70%;
-          background: $white;
-          border-radius: 5px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 0 10px;
-          box-sizing: border-box;
-          color: rgba(0,0,0,0.5);
-          box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25);
-          transition: all .25s linear;
-          position: relative;
-
-          &:hover {
-            box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25);
-            cursor: pointer;
-          }
-
-          .dots {
-            content: "";
-            height: 4px;
-            width: 4px;
-            border-radius: 50%;
-            background: $dark-red;
-            position: relative;
-          }
-          .dots:before {
-              content: "";
-              position: absolute;
-              height: 4px;
-              width: 4px;
-              border-radius: 50%;
-              background: $dark-red;
-              top: 10px;
-          }
-          .dots:after {
-              content: "";
-              position: absolute;
-              height: 4px;
-              width: 4px;
-              border-radius: 50%;
-              background: $dark-red;
-              top: -10px;
-          }
-        }
+        align-items: flex-end;
       }
     }
   }
@@ -140,9 +88,11 @@ $content-max-width: 1120px;
   justify-content: center;
 
   .title {
-    font-size: 24px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
     color: $black;
-    margin: 40px 0 24px 0;
+    margin: 16px 0 8px 0;
 
   }
 
@@ -152,6 +102,7 @@ $content-max-width: 1120px;
     flex-wrap: wrap;
 
     .box {
+      opacity: 1;
       height: 125px;
       width: 350px;
       background: white;
@@ -162,7 +113,7 @@ $content-max-width: 1120px;
       border-radius: 10px;
       margin: 16px 0;
       padding: 0 24px;
-      transition: all .25s linear;
+      transition: all .2s linear;
 
       &:hover {
         box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25);
@@ -185,6 +136,15 @@ $content-max-width: 1120px;
           font-weight: bold;
         }
       }
+    }
+
+    .hidden {
+      display: none;
+      opacity: 1;
+    }
+
+    .invisible {
+      opacity: 0;
     }
   }
 }

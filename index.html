@@ -2,7 +2,7 @@
 layout: default
 title: Directory - Women Who China
 people: site.data.people
-categories: ['All categories', 'WeChat', 'Weibo', 'Douyin', 'Content Marketing', 'Cross-Border eCommerce']
+categories: ['All', 'Content', 'eCommerce', 'WeChat']
 ---
 
 <div class="banner">
@@ -16,13 +16,7 @@ categories: ['All categories', 'WeChat', 'Weibo', 'Douyin', 'Content Marketing',
       <div class="subheader">Showcasing the women who dominate the digital marketing industry in China.</div>
 
       <!-- Filter Container -->
-      <div class="filter-container">
-        <div class="title">SELECT A CATEGORY</div>
-        <div class="box" id="filter">
-          <p class="text">All categories</p>
-          <div class="dots"></div>
-        </div>
-      </div>
+      <div class="title">SELECT A CATEGORY BELOW</div>
     </div>
 
     <!-- Right Side Image -->
@@ -32,6 +26,9 @@ categories: ['All categories', 'WeChat', 'Weibo', 'Douyin', 'Content Marketing',
 
 <!-- Results Container -->
 <div class="results">
+
+  {% include filter.html %}
+
   <div class="title">SHOWING {{site.data.people.size}} RESULTS</div>
 
   <!-- Profile Box -->
@@ -49,4 +46,3 @@ categories: ['All categories', 'WeChat', 'Weibo', 'Douyin', 'Content Marketing',
 </div>
 
 <div id="blur-layer"></div>
-{% include filter.html categories=page.categories%}
