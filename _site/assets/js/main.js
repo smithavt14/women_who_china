@@ -1,11 +1,9 @@
 // ----- Variables -----
 let cards = document.querySelectorAll('.results > .container > .box');
 let blur = document.getElementById('blur-layer');
-let filterModule = document.querySelector('.filter__container');
-let filterItems = document.querySelectorAll('.filter__container > .items > .item');
-let filterBox = document.getElementById('filter');
-let activeFilter = document.querySelector('.activeFilter');
-let submit = document.getElementById('submit-btn');
+let filterItems = document.querySelectorAll('.filter__container > .option');
+let active = document.querySelector('.filter__container > .active');
+let results = document.querySelector('.results > .title')
 
 
 // ----- Functions -----
@@ -28,44 +26,53 @@ const closePopup = () => {
   !!id ? popup.style.display = 'none' : filterModule.style.display = 'none';
 };
 
-const openFilter = () => {
-  filterModule.style.display = 'flex';
-  blur.style.display = 'block';
-};
-
 const toggleActiveFilters = (e) => {
   let item = e.currentTarget;
   let category = item.dataset.category;
 
-  activeFilter.classList.toggle('activeFilter');
-  item.classList.toggle('activeFilter');
+  active.classList.toggle('active');
+  item.classList.toggle('active');
 
-  activeFilter = item;
+  active = item;
 
   displayCategories();
 };
 
 const displayCategories = () => {
-  let active = document.querySelector('.activeFilter');
+  let active = document.querySelector('.filter__container > .active');
   let category = active.dataset.category;
-  let text = document.querySelector('#filter > .text');
 
   // Display category profiles
   cards.forEach((card) => {
     if (card.dataset.category === 'category') {
-      card.style.display = 'flex';
-    } else if (category === 'All categories') {
-      card.style.display = 'flex';
+      card.classList.remove('hidden');
+      setTimeout(() => {
+        card.classList.remove('invisible');
+      }, 100);
+    } else if (category === 'All') {
+      card.classList.remove('hidden');
+      setTimeout(() => {
+        card.classList.remove('invisible');
+      }, 100);
     } else {
-      card.style.display = 'none';
+      card.classList.add('invisible');
+      setTimeout(() => {
+        card.classList.add('hidden');
+      }, 100);
     }
   });
 
-  // Change innerText of filterBox
-  text.innerText = category;
+  // Change the # in Results text
+  setTimeout(() => {
+    changeResultsText()
+  }, 100)
+};
 
-  // Close filter window
-  closePopup();
+const changeResultsText = () => {
+  let hiddenCards = document.querySelectorAll('.results > .container > .hidden');
+  let number = cards.length - hiddenCards.length
+
+  results.innerHTML = `SHOWING ${number} RESULTS`
 };
 
 
@@ -83,4 +90,3 @@ filterItems.forEach((item) => {
 });
 
 blur.addEventListener('click', closePopup);
-filterBox.addEventListener('click', openFilter);
