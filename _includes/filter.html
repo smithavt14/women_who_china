@@ -1,14 +1,9 @@
 <div class="filter__container">
-  <div class="header">Choose a Category</div>
-  <div class="items">
-    {% for item in include.categories %}
-
-      {% if item == 'All categories' %}
-      <div data-category="{{item}}" class="item activeFilter" id="filterItem">{{item}}</div>
-      {% else %}
-      <div data-category="{{item}}" class="item" id="filterItem">{{item}}</div>
-      {% endif %}
-
-    {% endfor %}
-  </div>
+  {% for item in page.categories %}
+    {% if item == 'All' %}
+      <div data-category="{{item}}" class="option active">{{item}}</div>
+    {% else %}
+      <div data-category="{{item}}" class="option">{{item}}</div>
+    {% endif %}
+  {% endfor %}
 </div>
