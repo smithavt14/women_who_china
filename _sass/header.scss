@@ -15,10 +15,9 @@
     align-items: center;
 
     .logo {
-      height: 40px;
-      width: 80px;
-      background: white;
-      border-radius: 10px;
+      // height: 40px;
+      width: 200px;
+      object-fit: contain;
     }
 
     .submit-btn {

@@ -2,6 +2,7 @@
 layout: default
 title: Women Who China
 people: site.data.people
+categories: ['All categories', 'WeChat', 'Weibo', 'Douyin', 'Content Marketing', 'Cross-Border eCommerce']
 ---
 
 <div class="banner">
@@ -18,7 +19,7 @@ people: site.data.people
       <div class="filter-container">
         <div class="title">SELECT A CATEGORY</div>
         <div class="box" id="filter">
-          <p>All categories</p>
+          <p class="text">All categories</p>
           <div class="dots"></div>
         </div>
       </div>
@@ -29,12 +30,14 @@ people: site.data.people
   </div>
 </div>
 
+<!-- Results Container -->
 <div class="results">
   <div class="title">SHOWING {{site.data.people.size}} RESULTS</div>
 
+  <!-- Profile Box -->
   <div class="container">
     {% for item in site.data.people %}
-    <div class="box" data-id="{{item.id}}">
+    <div class="box" data-id="{{item.id}}" data-category="{{item.category}}">
       <img class="avatar" src="{{ item.image }}" alt="{{item.name}}">
       <div class="info">
         <div class="name">{{item.name}}</div>
@@ -44,3 +47,6 @@ people: site.data.people
     {% endfor %}
   </div>
 </div>
+
+<div id="blur-layer"></div>
+{% include filter.html categories=page.categories%}

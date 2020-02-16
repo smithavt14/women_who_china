@@ -1,0 +1,142 @@
+a {
+  text-decoration: none;
+}
+
+$height: 400px;
+$width: $height * 2;
+.popup__container {
+  display: none;
+  height: $height;
+  width: $width;
+  position: fixed;
+  top: 25%;
+  right: 50%;
+  transform: translateX(50%);
+  z-index: 5;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25);
+
+  .top {
+    height: $height * .35;
+    width: 100%;
+    background: $dark-red;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+
+    .avatar {
+      height: 100%;
+      width: auto;
+      border-radius: 5px;
+    }
+
+    .info {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: $white;
+      margin-left: 16px;
+
+      .name {
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      .category {
+        font-size: 24px;
+        font-weight: 100;
+      }
+    }
+
+    .linkedin-btn {
+      padding: 16px;
+      display: flex;
+      justify-content: space-around;
+      background: white;
+      border-radius: 5px;
+      box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25);
+      transition: all .25s linear;
+      position: absolute;
+      right: 20px;
+
+      &:hover {
+        box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+      }
+
+      .ln-logo {
+        height: 18px;
+        width: 18px;
+      }
+
+      .text {
+        margin-left: 8px;
+        font-size: 16px;
+        color: $dark-red;
+      }
+    }
+  }
+
+  .bottom {
+    flex-grow: 1;
+    padding: 20px;
+
+    .header {
+      font-size: 24px;
+      font-weight: bold;
+      color: $light-red;
+    }
+
+    .background-text {
+      font-size: 16px;
+      font-weight: 100;
+      color: $black;
+      margin-top: 8px;
+    }
+
+    .container {
+      display: flex;
+      padding: 20px 0;
+
+      .location {
+        width: 50%;
+
+        .header {
+          font-size: 24px;
+          font-weight: bold;
+          color: $light-red;
+        }
+
+        .text {
+          font-size: 16px;
+          font-weight: 100;
+          color: $black;
+          margin-top: 8px;
+        }
+      }
+
+      .categories {
+        width: 50%;
+
+        .header {
+          font-size: 24px;
+          font-weight: bold;
+          color: $light-red;
+        }
+
+        .text {
+          font-size: 16px;
+          font-weight: 100;
+          color: $black;
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}

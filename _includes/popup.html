@@ -1,0 +1,32 @@
+
+<div class="popups">
+{% for item in site.data.people%}
+  <div id="popup-{{item.id}}"class="popup__container">
+    <div class="top">
+      <img class="avatar" src="{{item.image}}" alt="{{item.name}} image">
+      <div class="info">
+        <div class="name">{{item.name}}</div>
+        <div class="category">{{item.category}}</div>
+      </div>
+      <div class="linkedin-btn">
+        <img class="ln-logo" src="../assets/images/ln-logo.svg" alt="linkedin logo">
+        <a href="{{item.linkedin}}" target="_blank"><div class="text">View My Linkedin</div></a>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="header">Background</div>
+      <div class="background-text">This is a default background for now. Later on, we'll either have the user upload a summary of themselves, or we'll scrape the information from Linkedin.</div>
+      <div class="container">
+        <div class="location">
+          <div class="header">Location</div>
+          <div class="text">{{item.location}}</div>
+        </div>
+        <div class="categories">
+          <div class="header">Categories</div>
+          <div class="text">{{item.category}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
