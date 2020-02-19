@@ -73,14 +73,15 @@ const displayCategories = () => {
 
   // Change the # in Results text
   setTimeout(() => {
-    changeResultsText()
+    changeResultsText();
   }, 100)
 };
 const createHTMLElement = (activeResults) => {
   let html = ''
 
   activeResults.forEach((item) => {
-    html += `<div class="box" data-id="${item.id}"" data-category="${item.category}">
+    html += `
+    <div class="box" data-id="${item.id}"" data-category="${item.category}">
       <img class="avatar" src="${ item.image }" alt="${item.name}">
       <div class="info">
         <div class="name">${item.name}</div>
@@ -96,18 +97,18 @@ const addEventListenerToResults = () => {
   let cards = document.querySelectorAll('.results > .container > .box');
 
   cards.forEach((card) => {
-    card.addEventListener('click', openPopup)
+    card.addEventListener('click', openPopup);
   });
 };
 
 const changeResultsText = () => {
   let cards = document.querySelectorAll('.results > .container > .box');
 
-  resultsText.innerHTML = `SHOWING ${cards.length} RESULTS`
+  resultsText.innerHTML = `SHOWING ${cards.length} RESULTS`;
 };
 
 const changeResults = () => {
-  let category = document.querySelector('.filter__container > .active').dataset.category
+  let category = document.querySelector('.filter__container > .active').dataset.category;
 
   if (category === 'All') {
     let activeResults = data;
@@ -133,4 +134,4 @@ filterItems.forEach((item) => {
 blur.addEventListener('click', closePopup);
 
 // ----- onLaunch Functions -----
-changeResults()
+changeResults();
