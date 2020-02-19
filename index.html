@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Directory - Women Who China
-people: site.data.people
 categories: ['All', 'Content', 'eCommerce', 'WeChat']
 ---
 
@@ -29,20 +28,10 @@ categories: ['All', 'Content', 'eCommerce', 'WeChat']
 
   {% include filter.html %}
 
-  <div class="title">SHOWING {{site.data.people.size}} RESULTS</div>
+  <div class="title">SHOWING 0 RESULTS</div>
 
   <!-- Profile Box -->
-  <div class="container">
-    {% for item in site.data.people %}
-    <div class="box" data-id="{{item.id}}" data-category="{{item.category}}">
-      <img class="avatar" src="{{ item.image }}" alt="{{item.name}}">
-      <div class="info">
-        <div class="name">{{item.name}}</div>
-        <div class="category">{{item.category}}</div>
-      </div>
-    </div>
-    {% endfor %}
-  </div>
+  <div class="container"></div>
 </div>
 
 <div id="blur-layer"></div>

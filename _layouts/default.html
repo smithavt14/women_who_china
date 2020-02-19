@@ -5,12 +5,14 @@
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="icon" type="image/png" href="./favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     {% include header.html %}
     {{ content }}
     {% include popup.html %}
     {% include footer.html %}
-    <script src="./assets/js/main.js"></script>
+    {% include data.html %}
+    <script src="/assets/js/main.js"></script>
   </body>
 </html>

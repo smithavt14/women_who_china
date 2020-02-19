@@ -3,11 +3,15 @@ let cards = document.querySelectorAll('.results > .container > .box');
 let blur = document.getElementById('blur-layer');
 let filterItems = document.querySelectorAll('.filter__container > .option');
 let active = document.querySelector('.filter__container > .active');
-let results = document.querySelector('.results > .title')
+let resultsText = document.querySelector('.results > .title');
+let resultsContainer = document.querySelector('.results > .container');
 
+let str = document.getElementById('data').dataset.people;
+let data = JSON.parse(str);
 
 // ----- Functions -----
-const openPopup = (id) => {
+const openPopup = (event) => {
+  let id = event.currentTarget.dataset.id
   let popup = document.getElementById(`popup-${id}`);
 
   popup.style.display = 'block';
@@ -35,7 +39,21 @@ const toggleActiveFilters = (e) => {
 
   active = item;
 
-  displayCategories();
+  changeResults(category);
+};
+
+const removeHiddenClass = (card) => {
+  card.classList.remove('hidden');
+  setTimeout(() => {
+    card.classList.remove('invisible');
+  }, 100);
+};
+
+const addHiddenClass = (card) => {
+  card.classList.add('invisible');
+  setTimeout(() => {
+    card.classList.add('hidden');
+  }, 100);
 };
 
 const displayCategories = () => {
@@ -45,48 +63,75 @@ const displayCategories = () => {
   // Display category profiles
   cards.forEach((card) => {
     if (card.dataset.category === 'category') {
-      card.classList.remove('hidden');
-      setTimeout(() => {
-        card.classList.remove('invisible');
-      }, 100);
+      removeHiddenClass(card);
     } else if (category === 'All') {
-      card.classList.remove('hidden');
-      setTimeout(() => {
-        card.classList.remove('invisible');
-      }, 100);
+      removeHiddenClass(card);
     } else {
-      card.classList.add('invisible');
-      setTimeout(() => {
-        card.classList.add('hidden');
-      }, 100);
+      addHiddenClass(card);
     }
   });
 
   // Change the # in Results text
   setTimeout(() => {
-    changeResultsText()
+    changeResultsText();
   }, 100)
+};
+const createHTMLElement = (activeResults) => {
+  let html = ''
+
+  activeResults.forEach((item) => {
+    html += `
+    <div class="box" data-id="${item.id}"" data-category="${item.category}">
+      <img class="avatar" src="${ item.image }" alt="${item.name}">
+      <div class="info">
+        <div class="name">${item.name}</div>
+        <div class="category">${item.category}</div>
+      </div>
+    </div>`
+  });
+
+  return(html)
+};
+
+const addEventListenerToResults = () => {
+  let cards = document.querySelectorAll('.results > .container > .box');
+
+  cards.forEach((card) => {
+    card.addEventListener('click', openPopup);
+  });
 };
 
 const changeResultsText = () => {
-  let hiddenCards = document.querySelectorAll('.results > .container > .hidden');
-  let number = cards.length - hiddenCards.length
+  let cards = document.querySelectorAll('.results > .container > .box');
 
-  results.innerHTML = `SHOWING ${number} RESULTS`
+  resultsText.innerHTML = `SHOWING ${cards.length} RESULTS`;
 };
 
+const changeResults = () => {
+  let category = document.querySelector('.filter__container > .active').dataset.category;
+
+  if (category === 'All') {
+    let activeResults = data;
+    let html = createHTMLElement(activeResults);
+    resultsContainer.innerHTML = '';
+    resultsContainer.innerHTML = html;
+  } else {
+    let activeResults = data.filter((item) => item.category === category);
+    let html = createHTMLElement(activeResults);
+    resultsContainer.innerHTML = '';
+    resultsContainer.innerHTML = html;
+  }
+
+  changeResultsText();
+  addEventListenerToResults();
+};
 
 // ----- Event Listeners -----
-cards.forEach((card) => {
-  card.addEventListener('click', (e) => {
-    let id = e.currentTarget.dataset.id;
-
-    openPopup(id);
-  })
-});
-
 filterItems.forEach((item) => {
   item.addEventListener('click', toggleActiveFilters);
 });
 
 blur.addEventListener('click', closePopup);
+
+// ----- onLaunch Functions -----
+changeResults();
