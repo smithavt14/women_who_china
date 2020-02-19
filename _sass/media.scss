@@ -123,7 +123,7 @@
       flex-wrap: wrap;
 
       .option {
-        margin: 8px;
+        margin: 8px auto;
       }
     }
   }
@@ -139,5 +139,35 @@
       }
     }
   }
+}
+
+.popup__container {
+  width: 90%;
+  height: unset;
+
+  .top {
+    height: 120px;
+    padding: 12px;
+
+    .info {
+      .name {
+        font-size: 24px;
+      }
+      .category {
+        font-size: 16px;
+      }
+    }
+
+    .linkedin-btn {
+      padding: 4px;
+      top: 12px;
+      right: 12px;
+
+      .text {
+        display: none;
+      }
+    }
+  }
+
 }
 

@@ -141,8 +141,20 @@ a { text-decoration: none; }
   .banner .container .content .title { position: absolute; bottom: 0; margin-bottom: 0; }
   .banner .container .woman-img { width: 90%; margin-top: 0; }
   .results .filter__container { flex-wrap: wrap; }
-  .results .filter__container .option { margin: 8px; }
+  .results .filter__container .option { margin: 8px auto; }
   .footer__container .container .note { width: 100%; }
   .footer__container .container .submit-btn { display: none; } }
+
+.popup__container { width: 90%; height: unset; }
+
+.popup__container .top { height: 120px; padding: 12px; }
+
+.popup__container .top .info .name { font-size: 24px; }
+
+.popup__container .top .info .category { font-size: 16px; }
+
+.popup__container .top .linkedin-btn { padding: 4px; top: 12px; right: 12px; }
+
+.popup__container .top .linkedin-btn .text { display: none; }
 
 /*# sourceMappingURL=styles.css.map */
