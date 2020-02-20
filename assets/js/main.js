@@ -107,6 +107,14 @@ const changeResultsText = () => {
   resultsText.innerHTML = `SHOWING ${cards.length} RESULTS`;
 };
 
+const scrollReveal = () => {
+  let options = {
+    reset: true,
+    duration: 1500
+  }
+  ScrollReveal().reveal('.box', options);
+};
+
 const changeResults = () => {
   let category = document.querySelector('.filter__container > .active').dataset.category;
 
@@ -124,6 +132,7 @@ const changeResults = () => {
 
   changeResultsText();
   addEventListenerToResults();
+  scrollReveal();
 };
 
 // ----- Event Listeners -----
