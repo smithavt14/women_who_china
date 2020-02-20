@@ -32,14 +32,14 @@ const closePopup = () => {
 
 const toggleActiveFilters = (e) => {
   let item = e.currentTarget;
-  let category = item.dataset.category;
+  let specialty = item.dataset.specialty;
 
   active.classList.toggle('active');
   item.classList.toggle('active');
 
   active = item;
 
-  changeResults(category);
+  changeResults(specialty);
 };
 
 const removeHiddenClass = (card) => {
@@ -58,13 +58,13 @@ const addHiddenClass = (card) => {
 
 const displayCategories = () => {
   let active = document.querySelector('.filter__container > .active');
-  let category = active.dataset.category;
+  let specialty = active.dataset.specialty;
 
-  // Display category profiles
+  // Display specialty profiles
   cards.forEach((card) => {
-    if (card.dataset.category === 'category') {
+    if (card.dataset.specialty === 'specialty') {
       removeHiddenClass(card);
-    } else if (category === 'All') {
+    } else if (specialty === 'All') {
       removeHiddenClass(card);
     } else {
       addHiddenClass(card);
@@ -81,11 +81,11 @@ const createHTMLElement = (activeResults) => {
 
   activeResults.forEach((item) => {
     html += `
-    <div class="box" data-id="${item.id}"" data-category="${item.category}">
-      <img class="avatar" src="${ item.image }" alt="${item.name}">
+    <div class="box" data-id="${item.id}"" data-specialty="${item.specialty}">
+      <img class="avatar" src="${item.image}" onerror="this.src='assets/images/default.png'" alt="{{item.name}} image">
       <div class="info">
-        <div class="name">${item.name}</div>
-        <div class="category">${item.category}</div>
+        <div class="name">${item.first_name} ${item.last_name}</div>
+        <div class="specialty">${item.specialty}</div>
       </div>
     </div>`
   });
@@ -116,15 +116,15 @@ const scrollReveal = () => {
 };
 
 const changeResults = () => {
-  let category = document.querySelector('.filter__container > .active').dataset.category;
+  let specialty = document.querySelector('.filter__container > .active').dataset.specialty;
 
-  if (category === 'All') {
+  if (specialty === 'All') {
     let activeResults = data;
     let html = createHTMLElement(activeResults);
     resultsContainer.innerHTML = '';
     resultsContainer.innerHTML = html;
   } else {
-    let activeResults = data.filter((item) => item.category === category);
+    let activeResults = data.filter((item) => item.specialty === specialty);
     let html = createHTMLElement(activeResults);
     resultsContainer.innerHTML = '';
     resultsContainer.innerHTML = html;

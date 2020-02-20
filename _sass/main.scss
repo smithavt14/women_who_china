@@ -98,22 +98,24 @@ $content-max-width: 1120px;
 
   .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
 
     .box {
       opacity: 1;
       height: 125px;
-      width: 350px;
+      width: 325px;
       background: white;
       box-sizing: border-box;
       display: flex;
       align-items: center;
       box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25);
       border-radius: 10px;
-      margin: 16px 0;
+      margin: 16px;
       padding: 0 24px;
       transition: all .2s linear;
+      flex-grow: 0;
+      flex-shrink: 0;
 
       &:hover {
         box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25);

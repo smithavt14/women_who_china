@@ -86,56 +86,23 @@ $width: $height * 2;
   .bottom {
     flex-grow: 1;
     padding: 20px;
-
-    .header {
-      font-size: 24px;
-      font-weight: bold;
-      color: $light-red;
-    }
-
-    .background-text {
-      font-size: 16px;
-      font-weight: 100;
-      color: $black;
-      margin-top: 8px;
-    }
+    display: flex;
+    box-sizing: border-box;
 
     .container {
-      display: flex;
-      padding: 20px 0;
+      flex-grow: 1;
 
-      .location {
-        width: 50%;
-
-        .header {
-          font-size: 24px;
-          font-weight: bold;
-          color: $light-red;
-        }
-
-        .text {
-          font-size: 16px;
-          font-weight: 100;
-          color: $black;
-          margin-top: 8px;
-        }
+      .header {
+        font-size: 24px;
+        font-weight: bold;
+        color: $light-red;
       }
 
-      .categories {
-        width: 50%;
-
-        .header {
-          font-size: 24px;
-          font-weight: bold;
-          color: $light-red;
-        }
-
-        .text {
-          font-size: 16px;
-          font-weight: 100;
-          color: $black;
-          margin-top: 8px;
-        }
+      .text {
+        font-size: 16px;
+        font-weight: 100;
+        color: $black;
+        margin-top: 8px;
       }
     }
   }
