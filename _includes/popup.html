@@ -1,11 +1,11 @@
 <div class="popups">
-{% for item in site.data.people%}
+{% for item in site.data.list%}
   <div id="popup-{{item.id}}"class="popup__container">
     <div class="top">
-      <img class="avatar" src="{{item.image}}" alt="{{item.name}} image">
+      <img class="avatar" src="{{item.image}}" onerror="this.src='assets/images/default.png'" alt="{{item.name}} image">
       <div class="info">
-        <div class="name">{{item.name}}</div>
-        <div class="category">{{item.category}}</div>
+        <div class="name">{{item.first_name}}{{item.last_name}}</div>
+        <div class="category">{{item.specialty}}</div>
       </div>
       <div class="linkedin-btn">
         <img class="ln-logo" src="./assets/images/ln-logo.svg" alt="linkedin logo">
@@ -13,17 +13,13 @@
       </div>
     </div>
     <div class="bottom">
-      <div class="header">Background</div>
-      <div class="background-text">This is a default background for now. Later on, we'll either have the user upload a summary of themselves, or we'll scrape the information from Linkedin.</div>
       <div class="container">
-        <div class="location">
-          <div class="header">Location</div>
-          <div class="text">{{item.location}}</div>
-        </div>
-        <div class="categories">
-          <div class="header">Categories</div>
-          <div class="text">{{item.category}}</div>
-        </div>
+        <div class="header">Company</div>
+        <div class="text">{{item.company}}</div>
+      </div>
+      <div class="container">
+        <div class="header">Specialty</div>
+        <div class="text">{{item.specialty}}</div>
       </div>
     </div>
   </div>

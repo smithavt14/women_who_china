@@ -1,9 +1,9 @@
 <div class="filter__container">
-  {% for item in page.categories %}
+  {% for item in page.specialty %}
     {% if item == 'All' %}
-      <div data-category="{{item}}" class="option active">{{item}}</div>
+      <div data-specialty="{{item}}" class="option active">{{item}}</div>
     {% else %}
-      <div data-category="{{item}}" class="option">{{item}}</div>
+      <div data-specialty="{{item}}" class="option">{{item}}</div>
     {% endif %}
   {% endfor %}
 </div>
