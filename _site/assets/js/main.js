@@ -85,7 +85,7 @@ const createHTMLElement = (activeResults) => {
       <img class="avatar" src="${item.image}" onerror="this.src='assets/images/default.png'" alt="{{item.name}} image">
       <div class="info">
         <div class="name">${item.first_name} ${item.last_name}</div>
-        <div class="specialty">${item.specialty}</div>
+        <div class="specialty">${item.company}</div>
       </div>
     </div>`
   });
