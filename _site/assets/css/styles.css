@@ -114,7 +114,7 @@ a { text-decoration: none; }
 
 .mobile-filter__container .popup-container { position: fixed; bottom: -40vh; left: 0; width: 100vw; height: 40vh; background: white; overflow: scroll; padding: 20px; box-sizing: border-box; border-top: 1px solid #F5F5F5; z-index: 10; transition: all .25s linear; }
 
-.mobile-filter__container .popup-container .option { height: 50px; width: 90%; color: #FF9588; border-bottom: 1px solid #FF9588; display: flex; align-items: center; cursor: pointer; }
+.mobile-filter__container .popup-container .option { height: 50px; width: 100%; color: #FF9588; border-bottom: 1px solid #FF9588; display: flex; align-items: center; cursor: pointer; }
 
 .mobile-filter__container .popup-container .active { color: #FF1A2E; border-bottom: 1px solid #FF1A2E; }
 
