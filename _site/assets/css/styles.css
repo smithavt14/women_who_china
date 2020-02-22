@@ -132,7 +132,7 @@ a { text-decoration: none; }
 @media screen and (max-width: 500px) { .header__container .container { display: flex; position: relative; align-items: center; justify-content: flex-end; height: 90%; }
   .header__container .container .logo { display: none; }
   .header__container .container .submit-btn { font-size: 12px; padding: 12px; }
-  .banner { height: 100vh; }
+  .banner { height: 90vh; }
   .banner .ellipsis { height: 180vw; width: 180vw; bottom: -90vw; right: -90vw; }
   .banner .container { margin-top: 20%; height: 80%; width: 90%; flex-direction: column; align-items: flex-end; justify-content: space-around; }
   .banner .container .content { width: 100%; }
