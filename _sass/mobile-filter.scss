@@ -1,0 +1,53 @@
+.mobile-filter__container {
+  display: none;
+  width: 100%;
+  padding: 20px 0;
+
+  .btn {
+    height: 50px;
+    width: 100%;
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25);
+    transition: all .25s linear;
+    color: $dark-red;
+
+    &:hover {
+      box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+    }
+  }
+
+  .popup-container {
+    position: fixed;
+    bottom: -40vh;
+    left: 0;
+    width: 100vw;
+    height: 40vh;
+    background: white;
+    overflow: scroll;
+    padding: 20px;
+    box-sizing: border-box;
+    border-top: 1px solid $white;
+    z-index: 10;
+    transition: all .25s linear;
+
+    .option {
+      height: 50px;
+      width: 90%;
+      color: $light-red;
+      border-bottom: 1px solid $light-red;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .active {
+      color: $dark-red;
+      border-bottom: 1px solid $dark-red;
+    }
+  }
+}

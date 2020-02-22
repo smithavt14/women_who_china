@@ -144,29 +144,36 @@
   width: 90%;
   height: unset;
 
-  .top {
-    height: 120px;
-    padding: 12px;
+    .top {
+      height: 120px;
+      padding: 12px;
 
-    .info {
-      .name {
-        font-size: 24px;
+      .info {
+        .name {
+          font-size: 24px;
+        }
+        .category {
+          font-size: 16px;
+        }
       }
-      .category {
-        font-size: 16px;
-      }
-    }
 
-    .linkedin-btn {
-      padding: 4px;
-      top: 12px;
-      right: 12px;
+      .linkedin-btn {
+        padding: 4px;
+        top: 12px;
+        right: 12px;
 
-      .text {
-        display: none;
+        .text {
+          display: none;
+        }
       }
     }
   }
-}
-}
 
+  .mobile-filter__container {
+    display: block;
+  }
+
+  .filter__container {
+    display: none;
+  }
+}

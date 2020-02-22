@@ -1,0 +1,15 @@
+<div class="mobile-filter__container">
+  <div class="btn">
+    All Specialities
+  </div>
+
+  <div class="popup-container">
+    {% for item in page.specialty %}
+      {% if item == 'All Specialties' %}
+        <div data-specialty="{{item}}" class="option active">{{item}}</div>
+      {% else %}
+        <div data-specialty="{{item}}" class="option">{{item}}</div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
