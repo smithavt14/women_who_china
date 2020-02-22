@@ -110,7 +110,7 @@ const changeResultsText = () => {
 const scrollReveal = () => {
   let options = {
     reset: true,
-    duration: 1500
+    duration: 600
   }
   ScrollReveal().reveal('.box', options);
 };

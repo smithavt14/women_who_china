@@ -127,6 +127,7 @@ $content-max-width: 1120px;
         width: 88px;
         border-radius: 50px;
         object-fit: cover;
+        flex-shrink: 0;
       }
 
       .info {

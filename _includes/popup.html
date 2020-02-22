@@ -5,12 +5,14 @@
       <img class="avatar" src="{{item.image}}" onerror="this.src='assets/images/default.png'" alt="{{item.name}} image">
       <div class="info">
         <div class="name">{{item.first_name}}{{item.last_name}}</div>
-        <div class="category">{{item.specialty}}</div>
+        <div class="category">{{item.company}}</div>
       </div>
-      <div class="linkedin-btn">
-        <img class="ln-logo" src="./assets/images/ln-logo.svg" alt="linkedin logo">
-        <a href="{{item.linkedin}}" target="_blank"><div class="text">View My Linkedin</div></a>
-      </div>
+      <a href="{{item.linkedin}}" target="_blank" style="display: flex; align-items: center;">
+        <div class="linkedin-btn">
+          <img class="ln-logo" src="./assets/images/ln-logo.svg" alt="linkedin logo">
+          <div class="text">View My Linkedin</div>
+        </div>
+      </a>
     </div>
     <div class="bottom">
       <div class="container">
