@@ -48,7 +48,7 @@ body { margin: 0; background: #F5F5F5; font-family: Lato, sans-serif; display: f
 
 a { text-decoration: none; }
 
-.footer__container { margin-top: 40px; height: 150px; width: 100vw; background: #FF1A2E; display: flex; justify-content: center; }
+.footer__container { margin-top: 40px; min-height: 150px; padding: 20px; box-sizing: border-box; width: 100vw; background: #FF1A2E; display: flex; justify-content: center; }
 
 .footer__container .container { max-width: 1120px; width: 90vw; display: flex; justify-content: space-between; align-items: center; }
 
@@ -127,11 +127,11 @@ a { text-decoration: none; }
   .banner .container .woman-img { width: 60%; }
   .results .container .box { margin: 16px; width: 40%; } }
 
-.footer__container .container .note { width: 65%; flex-grow: 0; font-size: 16px; }
+.footer__container .container .note { width: 75%; flex-grow: 0; font-size: 16px; }
 
 @media screen and (max-width: 500px) { .header__container .container { display: flex; position: relative; align-items: center; justify-content: flex-end; height: 90%; }
   .header__container .container .logo { display: none; }
-  .header__container .container .submit-btn { font-size: 12px; padding: 12px; }
+  .header__container .container .submit-btn { font-size: 16px; padding: 16px; }
   .banner { height: 90vh; }
   .banner .ellipsis { height: 180vw; width: 180vw; bottom: -90vw; right: -90vw; }
   .banner .container { margin-top: 20%; height: 80%; width: 90%; flex-direction: column; align-items: flex-end; justify-content: space-around; }
@@ -142,8 +142,9 @@ a { text-decoration: none; }
   .banner .container .woman-img { width: 90%; margin-top: 0; }
   .results .filter__container { flex-wrap: wrap; }
   .results .filter__container .option { margin: 8px auto; }
+  .footer__container .container { flex-direction: column; }
   .footer__container .container .note { width: 100%; }
-  .footer__container .container .submit-btn { display: none; }
+  .footer__container .container .submit-btn { margin: 20px; font-size: 16px; padding: 16px; }
   .popup__container { width: 90%; height: unset; }
   .popup__container .top { height: 120px; padding: 12px; }
   .popup__container .top .info .name { font-size: 24px; }

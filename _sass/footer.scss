@@ -6,7 +6,9 @@ a {
 
 .footer__container {
   margin-top: 40px;
-  height: 150px;
+  min-height: 150px;
+  padding: 20px;
+  box-sizing: border-box;
   width: 100vw;
   background: $dark-red;
   display: flex;
