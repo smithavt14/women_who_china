@@ -54,7 +54,7 @@ a { text-decoration: none; }
 
 .footer__container .container .note { color: #F5F5F5; }
 
-.footer__container .container .submit-btn { padding: 20px; background: #F5F5F5; color: #FF1A2E; font-weight: bold; border-radius: 5px; display: flex; justify-content: center; align-items: center; box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25); transition: all .25s linear; }
+.footer__container .container .submit-btn { padding: 20px; margin: 20px; background: #F5F5F5; color: #FF1A2E; font-weight: bold; border-radius: 5px; display: flex; justify-content: center; align-items: center; box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25); transition: all .25s linear; }
 
 .footer__container .container .submit-btn:hover { box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25); cursor: pointer; }
 
@@ -129,6 +129,10 @@ a { text-decoration: none; }
 
 .footer__container .container .note { width: 75%; flex-grow: 0; font-size: 16px; }
 
+.footer__container .container .btn-container { display: flex; flex-direction: column; height: 100%; justify-content: space-between; }
+
+.footer__container .container .btn-container .submit-btn { margin: 16px 0; font-size: 16px; padding: 16px; }
+
 @media screen and (max-width: 500px) { .header__container .container { display: flex; position: relative; align-items: center; justify-content: flex-end; height: 90%; }
   .header__container .container .logo { display: none; }
   .header__container .container .submit-btn { font-size: 16px; padding: 16px; }
@@ -144,7 +148,8 @@ a { text-decoration: none; }
   .results .filter__container .option { margin: 8px auto; }
   .footer__container .container { flex-direction: column; }
   .footer__container .container .note { width: 100%; }
-  .footer__container .container .submit-btn { margin: 20px; font-size: 16px; padding: 16px; }
+  .footer__container .container .btn-container { display: flex; width: 100%; justify-content: space-between; }
+  .footer__container .container .btn-container .submit-btn { margin: 16px 0; font-size: 16px; padding: 16px; }
   .popup__container { width: 90%; height: unset; }
   .popup__container .top { height: 120px; padding: 12px; }
   .popup__container .top .info .name { font-size: 24px; }

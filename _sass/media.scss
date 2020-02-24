@@ -55,6 +55,19 @@
       flex-grow: 0;
       font-size: 16px;
     }
+
+    .btn-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
+
+      .submit-btn {
+        margin: 16px 0;
+        font-size: 16px;
+        padding: 16px;
+      }
+    }
   }
 }
 
@@ -135,10 +148,16 @@
         width: 100%;
       }
 
-      .submit-btn {
-        margin: 20px;
-        font-size: 16px;
-        padding: 16px;
+      .btn-container {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        .submit-btn {
+          margin: 16px 0;
+          font-size: 16px;
+          padding: 16px;
+        }
       }
     }
   }
