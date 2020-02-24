@@ -62,7 +62,7 @@ a { text-decoration: none; }
 
 .header__container .container { max-width: 1120px; width: 90vw; display: flex; justify-content: space-between; align-items: center; }
 
-.header__container .container .logo { width: 200px; object-fit: contain; }
+.header__container .container .logo { width: 250px; object-fit: contain; }
 
 .header__container .container .submit-btn { padding: 16px; background: #F5F5F5; color: #FF1A2E; font-weight: bold; border-radius: 5px; display: flex; justify-content: center; align-items: center; box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25); transition: all .25s linear; }
 
@@ -118,13 +118,13 @@ a { text-decoration: none; }
 
 .mobile-filter__container .popup-container .active { color: #FF1A2E; border-bottom: 1px solid #FF1A2E; }
 
-@media screen and (max-width: 1024px) and (min-width: 501px) { .banner .ellipsis { height: 120vw; width: 120vw; bottom: -60vw; right: -60vw; }
+@media screen and (max-width: 1023px) and (min-width: 501px) { .banner .ellipsis { height: 120vw; width: 120vw; bottom: -60vw; right: -60vw; }
   .banner .container { width: 80%; height: 80%; flex-direction: column; align-items: flex-end; }
   .banner .container .content { width: 100%; height: 50%; justify-content: flex-end; }
-  .banner .container .content .header { font-size: 56px; }
-  .banner .container .content .subheader { font-size: 32px; }
+  .banner .container .content .header { font-size: 40px; }
+  .banner .container .content .subheader { font-size: 24px; }
   .banner .container .content .title { position: absolute; bottom: 0; }
-  .banner .container .woman-img { width: 60%; }
+  .banner .container .woman-img { width: 55%; }
   .results .container .box { margin: 16px; width: 40%; } }
 
 .footer__container .container .note { width: 75%; flex-grow: 0; font-size: 16px; }
@@ -139,7 +139,7 @@ a { text-decoration: none; }
   .banner .container .content .header { font-size: 36px; }
   .banner .container .content .subheader { font-size: 20px; }
   .banner .container .content .title { position: absolute; bottom: 0; margin-bottom: 0; }
-  .banner .container .woman-img { width: 90%; margin-top: 0; }
+  .banner .container .woman-img { width: 95%; margin-top: 0; }
   .results .filter__container { flex-wrap: wrap; }
   .results .filter__container .option { margin: 8px auto; }
   .footer__container .container { flex-direction: column; }
