@@ -16,11 +16,12 @@
     background: white;
     border-radius: 5px;
     margin: 8px;
-    color: $dark-red;
+    color: $light-red;
     box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25);
     transition: all .25s linear;
 
     &:hover {
+      color: $dark-red;
       box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25);
       cursor: pointer;
     }
@@ -28,6 +29,7 @@
 
   .active {
     background: $dark-red;
-    color: $white;
+    color: $white !important;
+
   }
 }

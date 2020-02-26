@@ -4,7 +4,7 @@
     <div class="top">
       <img class="avatar" src="{{item.image}}" onerror="this.src='assets/images/default.png'" alt="{{item.name}} image">
       <div class="info">
-        <div class="name">{{item.first_name}}{{item.last_name}}</div>
+        <div class="name">{{item.first_name}} {{item.last_name}}</div>
         <div class="category">{{item.company}}</div>
       </div>
       <a href="{{item.linkedin}}" target="_blank" style="display: flex; align-items: center;">
@@ -16,14 +16,23 @@
     </div>
     <div class="bottom">
       <div class="container">
-        <div class="header">Company</div>
-        <div class="text">{{item.company}}</div>
+        <div class="flex-box">
+          <div class="header">Summary</div>
+          <div class="text" id="text">{{item.summary}}</div>
+        </div>
       </div>
       <div class="container">
-        <div class="header">Specialty</div>
-        <div class="text">{{item.specialty}}</div>
+        <div class="flex-box">
+          <div class="header">Company</div>
+          <div class="text">{{item.company}}</div>
+        </div>
+        <div class="flex-box">
+          <div class="header">Specialty</div>
+          <div class="text">{{item.specialty}}</div>
+        </div>
       </div>
     </div>
+    <a href="https://women-who-china.typeform.com/to/KPzydS" target="_blank" class="link">Suggest an Update</a>
   </div>
 {% endfor %}
 </div>

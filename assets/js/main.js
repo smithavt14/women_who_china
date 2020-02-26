@@ -13,6 +13,8 @@ let mobileFilterPopUp = document.querySelector('.popup-container');
 let resultsText = document.querySelector('.results > .title');
 let resultsContainer = document.querySelector('.results > .container');
 
+let popupTextArray = document.querySelectorAll('#text');
+
 let str = document.getElementById('data').dataset.people;
 let data = JSON.parse(str);
 
@@ -27,7 +29,7 @@ const openProfilePopUp = (e) => {
   let id = e.currentTarget.dataset.id
   let popup = document.getElementById(`popup-${id}`);
 
-  popup.style.display = 'block';
+  popup.style.display = 'flex';
   blur.style.display = 'block';
   blur.dataset.id = id;
 };
@@ -71,20 +73,6 @@ const toggleActiveFilters = (e) => {
 };
 
 // ----- Result Card Functions -----
-const removeHiddenClass = (card) => {
-  card.classList.remove('hidden');
-  setTimeout(() => {
-    card.classList.remove('invisible');
-  }, 100);
-};
-
-const addHiddenClass = (card) => {
-  card.classList.add('invisible');
-  setTimeout(() => {
-    card.classList.add('hidden');
-  }, 100);
-};
-
 const createHTMLElement = (activeResults) => {
   let html = ''
 
@@ -145,6 +133,12 @@ const changeResults = (specialty) => {
   addEventListenerToResults();
   scrollReveal();
 };
+
+const shortenText = () => {
+  popupTextArray.forEach((text) => {
+    text.innerHTML = text.innerHTML.substring(0, 250);
+  })
+}
 
 // ----- Event Listeners -----
 filterItems.forEach((item) => {

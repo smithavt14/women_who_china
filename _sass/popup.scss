@@ -6,6 +6,7 @@ $height: 400px;
 $width: $height * 2;
 .popup__container {
   display: none;
+  flex-direction: column;
   height: $height;
   width: $width;
   position: fixed;
@@ -20,7 +21,7 @@ $width: $height * 2;
   box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25);
 
   .top {
-    height: $height * .35;
+    height: 30%;
     width: 100%;
     background: $dark-red;
     display: flex;
@@ -37,6 +38,7 @@ $width: $height * 2;
 
     .info {
       height: 100%;
+      width: 50%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -84,26 +86,54 @@ $width: $height * 2;
   }
 
   .bottom {
-    flex-grow: 1;
-    padding: 20px;
+    height: 60%;
     display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+    padding: 20px;
     box-sizing: border-box;
 
     .container {
-      flex-grow: 1;
+      flex: 1;
+      display: flex;
+      box-sizing: border-box;
+      position: relative;
+      margin-bottom: 10px;
 
-      .header {
-        font-size: 24px;
-        font-weight: bold;
-        color: $light-red;
-      }
+      .flex-box {
+        height: 100%;
+        position: relative;
+        flex: 1;
 
-      .text {
-        font-size: 16px;
-        font-weight: 100;
-        color: $black;
-        margin-top: 8px;
+        .header {
+          font-size: 24px;
+          font-weight: bold;
+          color: $light-red;
+        }
+
+        .text {
+          font-size: 16px;
+          font-weight: 100;
+          color: $black;
+          margin-top: 8px;
+          max-height: 100px;
+          overflow: scroll;
+        }
       }
+    }
+  }
+  .link {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    text-decoration: none;
+    color: $light-red;
+    cursor: pointer;
+    transition: all .2s linear;
+
+    &:hover {
+      color: $dark-red;
     }
   }
 }

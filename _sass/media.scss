@@ -164,7 +164,7 @@
 
   .popup__container {
   width: 90%;
-  height: unset;
+  min-height: 400px;
 
     .top {
       height: 120px;
@@ -172,10 +172,10 @@
 
       .info {
         .name {
-          font-size: 24px;
+          font-size: 20px;
         }
         .category {
-          font-size: 16px;
+          font-size: 12px;
         }
       }
 
@@ -186,6 +186,18 @@
 
         .text {
           display: none;
+        }
+      }
+    }
+    .bottom {
+      .container {
+        .flex-box {
+          .header {
+            font-size: 20px;
+          }
+          .text {
+            font-size: 12px;
+          }
         }
       }
     }
