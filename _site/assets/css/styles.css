@@ -166,7 +166,7 @@ a { text-decoration: none; }
   .popup__container .top .linkedin-btn { padding: 4px; top: 12px; right: 12px; }
   .popup__container .top .linkedin-btn .text { display: none; }
   .popup__container .bottom .container .flex-box .header { font-size: 20px; }
-  .popup__container .bottom .container .flex-box .text { font-size: 12px; }
+  .popup__container .bottom .container .flex-box .text { font-size: 16px; }
   .mobile-filter__container { display: block; }
   .filter__container { display: none; } }
 
