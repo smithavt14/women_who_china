@@ -73,6 +73,8 @@
 
 @media screen and (max-width: 500px) {
   .header__container {
+    height: 100px;
+
     .container {
       display: flex;
       position: relative;
@@ -86,7 +88,7 @@
 
       .submit-btn {
         font-size: 16px;
-        padding: 16px;
+        padding: 12px;
       }
     }
   }
@@ -112,10 +114,10 @@
       .content {
         width: 100%;
         .header {
-          font-size: 36px;
+          font-size: 40px;
         }
         .subheader {
-          font-size: 20px;
+          font-size: 16px;
         }
         .title {
           position: absolute;
@@ -126,17 +128,27 @@
 
       .woman-img {
         width: 95%;
-        margin-top: 0;
+        margin-top: auto;
       }
     }
   }
 
   .results {
+    width: 95vw;
+
     .filter__container {
       flex-wrap: wrap;
 
       .option {
         margin: 8px auto;
+      }
+    }
+
+    .container {
+      .box {
+        width: 100%;
+        margin: 8px 0;
+        padding: 0 16px;
       }
     }
   }
