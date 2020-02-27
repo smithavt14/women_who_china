@@ -24,9 +24,9 @@ body { margin: 0; background: #F5F5F5; font-family: Lato, sans-serif; display: f
 
 .results .title { width: 100%; text-align: center; font-size: 16px; color: #353636; margin: 16px 0 8px 0; }
 
-.results .container { display: flex; justify-content: center; flex-wrap: wrap; }
+.results .container { display: flex; justify-content: space-between; flex-wrap: wrap; }
 
-.results .container .box { opacity: 1; height: 125px; width: 325px; background: white; box-sizing: border-box; display: flex; align-items: center; box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25); border-radius: 10px; margin: 16px; padding: 0 24px; transition: all .2s linear; flex-grow: 0; flex-shrink: 0; }
+.results .container .box { opacity: 1; height: 125px; width: 340px; background: white; box-sizing: border-box; display: flex; align-items: center; box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25); border-radius: 10px; margin: 16px; padding: 0 24px; transition: all .2s linear; flex-grow: 0; flex-shrink: 0; }
 
 .results .container .box:hover { box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25); cursor: pointer; }
 
@@ -104,13 +104,19 @@ a { text-decoration: none; }
 
 .popup__container .link:hover { color: #FF1A2E; }
 
-.filter__container { width: 100%; display: flex; padding: 20px 0; justify-content: center; align-items: center; flex-wrap: wrap; }
+.filter__container { width: 100%; margin: 20px 0; display: flex; justify-content: space-around; align-items: center; }
 
-.filter__container .option { height: 50px; min-width: 115px; padding: 0 10px; display: flex; justify-content: center; align-items: center; background: white; border-radius: 5px; margin: 8px; color: #FF9588; box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25); transition: all .25s linear; }
+.filter__container .filter-cta { padding: 20px; flex-grow: 1; margin: 0 20px; background: white; border-radius: 5px; display: flex; justify-content: center; align-items: center; box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25); transition: all .25s linear; color: #FF9588; position: relative; box-sizing: border-box; }
 
-.filter__container .option:hover { color: #FF1A2E; box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25); cursor: pointer; }
+.filter__container .filter-cta:hover { color: #FF1A2E; box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25); cursor: pointer; }
 
-.filter__container .active { background: #FF1A2E; color: #F5F5F5 !important; }
+.filter__container .filter-cta .dropdown { display: none; max-height: 300px; width: 100%; position: absolute; top: 0; overflow: scroll; background: white; z-index: 5; border-radius: 5px; padding: 0 20px; box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25); }
+
+.filter__container .filter-cta .dropdown .option { height: 50px; width: 100%; color: #FF9588; margin: 8px 0; border-bottom: 1px solid #FF9588; transition: all .25s linear; box-sizing: border-box; display: flex; align-items: center; }
+
+.filter__container .filter-cta .dropdown .option:hover { color: #FF1A2E; border-bottom: 1px solid #FF1A2E; cursor: pointer; }
+
+.filter__container .filter-cta .dropdown .active { border-bottom: 1px solid #FF9588; color: #FF1A2E; }
 
 .mobile-filter__container { display: none; width: 100%; padding: 20px 0; }
 
@@ -131,7 +137,8 @@ a { text-decoration: none; }
   .banner .container .content .subheader { font-size: 24px; }
   .banner .container .content .title { position: absolute; bottom: 0; }
   .banner .container .woman-img { width: 55%; }
-  .results .container .box { margin: 16px; width: 40%; } }
+  .results .container { justify-content: space-between; }
+  .results .container .box { margin: 16px; width: 45%; } }
 
 .footer__container .container .note { width: 75%; flex-grow: 0; font-size: 16px; }
 
@@ -150,6 +157,7 @@ a { text-decoration: none; }
   .banner .container .content .subheader { font-size: 20px; }
   .banner .container .content .title { position: absolute; bottom: 0; margin-bottom: 0; }
   .banner .container .woman-img { width: 95%; margin-top: 0; }
+  .results .container { justify-content: center; }
   .results .filter__container { flex-wrap: wrap; }
   .results .filter__container .option { margin: 8px auto; }
   .footer__container .container { flex-direction: column; }

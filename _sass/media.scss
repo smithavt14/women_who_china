@@ -40,9 +40,11 @@
 
   .results {
     .container {
+      justify-content: space-between;
+
       .box {
         margin: 16px;
-        width: 40%;
+        width: 45%;
       }
     }
   }
@@ -132,6 +134,10 @@
   }
 
   .results {
+    .container {
+      justify-content: center;
+    }
+
     .filter__container {
       flex-wrap: wrap;
 

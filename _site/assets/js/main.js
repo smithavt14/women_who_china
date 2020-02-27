@@ -2,8 +2,10 @@
 let cards = document.querySelectorAll('.results > .container > .box');
 let blur = document.getElementById('blur-layer');
 
-let filter = document.querySelector('.filter__container');
-let filterItems = document.querySelectorAll('.filter__container > .option');
+let filters = document.querySelectorAll('.filter-cta');
+let dropdown
+
+let filterItems = document.querySelectorAll('.filter__container > .filter-cta > .dropdown > .option');
 
 let mobileFilter = document.querySelector('.mobile-filter__container');
 let mobileFilterItems = document.querySelectorAll('.popup-container > .option');
@@ -57,7 +59,7 @@ const closeMobileFilter = () => {
   mobileFilterPopUp.style.bottom = '-40vh';
 }
 
-// ----- Desktop Filter Functions -----
+// ----- Filter Functions -----
 const toggleActiveFilters = (e) => {
   active = retrieveActiveFilterOption();
 
@@ -140,6 +142,19 @@ const shortenText = () => {
   })
 }
 
+const openFilter = (e) => {
+  closeFilter();
+
+  let type = e.currentTarget.dataset.type;
+  dropdown = document.getElementById(`${type}`);
+
+  dropdown.style.display = 'unset';
+}
+
+const closeFilter = () => {
+  if (dropdown) dropdown.style.display = 'none';
+}
+
 // ----- Event Listeners -----
 filterItems.forEach((item) => {
   item.addEventListener('click', toggleActiveFilters);
@@ -152,6 +167,10 @@ mobileFilterItems.forEach((item) => {
 blur.addEventListener('click', closeProfilePopUp);
 
 mobileFilterBtn.addEventListener('click', openMobileFilter);
+
+filters.forEach((filter) => {
+  filter.addEventListener('click', openFilter);
+})
 
 // ----- onLaunch Functions -----
 changeResults('All Specialties');

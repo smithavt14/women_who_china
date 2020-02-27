@@ -1,35 +1,66 @@
 .filter__container {
   width: 100%;
+  margin: 20px 0;
   display: flex;
-  padding: 20px 0;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;
 
-  .option {
-    height: 50px;
-    min-width: 115px;
-    padding: 0 10px;
+  .filter-cta {
+    padding: 20px;
+    flex-grow: 1;
+    margin: 0 20px;
+    background: white;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: white;
-    border-radius: 5px;
-    margin: 8px;
-    color: $light-red;
     box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25);
     transition: all .25s linear;
+    color: $light-red;
+    position: relative;
+    box-sizing: border-box;
 
     &:hover {
       color: $dark-red;
       box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25);
       cursor: pointer;
     }
-  }
 
-  .active {
-    background: $dark-red;
-    color: $white !important;
+    .dropdown {
+      display: none;
+      max-height: 300px;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      overflow: scroll;
+      background: white;
+      z-index: 5;
+      border-radius: 5px;
+      padding: 0 20px;
+      box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25);
 
+      .option {
+        height: 50px;
+        width: 100%;
+        color: $light-red;
+        margin: 8px 0;
+        border-bottom: 1px solid $light-red;
+        transition: all .25s linear;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+          color: $dark-red;
+          border-bottom: 1px solid $dark-red;
+          cursor: pointer;
+        }
+      }
+
+      .active {
+        border-bottom: 1px solid $light-red;
+        color: $dark-red
+      }
+    }
   }
 }
