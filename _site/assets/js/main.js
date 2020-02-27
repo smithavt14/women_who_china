@@ -18,10 +18,23 @@ let popupTextArray = document.querySelectorAll('#text');
 let str = document.getElementById('data').dataset.people;
 let data = JSON.parse(str);
 
+console.log(data);
+
 // ----- Set Active Variable -----
 const retrieveActiveFilterOption = () => {
   active = window.innerWidth > 500 ? document.querySelector('.filter__container > .active') : document.querySelector('.popup-container > .active');
   return (active);
+}
+
+const shuffleData = (data) => {
+  let i = 0, random = 0, temp
+
+  for (i = data.length - 1; i > 0; i -= 1) {
+    random = Math.floor(Math.random() * (i + 1));
+    temp = data[i];
+    data[i] = data[random];
+    data[random] = temp;
+  }
 }
 
 // ----- Profile Popup Functions -----
@@ -116,6 +129,7 @@ const scrollReveal = () => {
 };
 
 const changeResults = (specialty) => {
+  shuffleData(data);
 
   if (specialty === 'All Specialties') {
     let activeResults = data;
