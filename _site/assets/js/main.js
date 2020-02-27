@@ -22,7 +22,7 @@ let data = JSON.parse(str);
 
 // ----- Set Active Variable -----
 const retrieveActiveFilterOption = () => {
-  active = window.innerWidth > 500 ? document.querySelector('.filter__container > .active') : document.querySelector('.popup-container > .active');
+  active = window.innerWidth > 500 ? document.querySelector('.filter__container > .filter-cta > .dropdown > .active') : document.querySelector('.popup-container > .active');
   return (active);
 }
 
@@ -69,6 +69,7 @@ const toggleActiveFilters = (e) => {
   active.classList.remove('active');
   item.classList.add('active');
 
+  closeFilter();
   changeMobileFilterBtnText(specialty);
   changeResults(specialty);
   closeMobileFilter();
@@ -133,7 +134,7 @@ const changeResults = (specialty) => {
 
   changeResultsText();
   addEventListenerToResults();
-  scrollReveal();
+  // scrollReveal();
 };
 
 const shortenText = () => {
@@ -152,6 +153,7 @@ const openFilter = (e) => {
 }
 
 const closeFilter = () => {
+  console.log('closeFilter', '-->', dropdown);
   if (dropdown) dropdown.style.display = 'none';
 }
 
