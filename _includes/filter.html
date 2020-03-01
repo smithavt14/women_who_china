@@ -1,24 +1,24 @@
 <div class="filter__container">
   <div class="filter-cta" data-type="specialty">
-    <div>All Specialties</div>
+    <div id='filterBtn-specialty'>All Specialties</div>
     <div class="dropdown" id="specialty">
       {% for item in page.specialty %}
         {% if item == 'All Specialties' %}
-          <div data-specialty="{{item}}" class="option active">{{item}}</div>
+          <div data-specialty="{{item}}" data-type="specialty" class="option active">{{item}}</div>
         {% else %}
-          <div data-specialty="{{item}}" class="option">{{item}}</div>
+          <div data-specialty="{{item}}" data-type="specialty" class="option">{{item}}</div>
         {% endif %}
       {% endfor %}
     </div>
   </div>
   <div class="filter-cta" data-type="region">
-    <div>All Regions</div>
+    <div id='filterBtn-region'>All Regions</div>
     <div class="dropdown" id="region">
       {% for item in page.region %}
         {% if item == 'All Regions' %}
-          <div data-region="{{item}}" class="option active">{{item}}</div>
+          <div data-region="{{item}}" data-type="region" class="option active">{{item}}</div>
         {% else %}
-          <div data-region="{{item}}" class="option">{{item}}</div>
+          <div data-region="{{item}}" data-type="region" class="option">{{item}}</div>
         {% endif %}
       {% endfor %}
     </div>

@@ -2,10 +2,13 @@
 let cards = document.querySelectorAll('.results > .container > .box');
 let blur = document.getElementById('blur-layer');
 
-let filters = document.querySelectorAll('.filter-cta');
-let dropdown
+let dropdown // Keep for closeFilter()
 
+let filters = document.querySelectorAll('.filter-cta');
 let filterItems = document.querySelectorAll('.filter__container > .filter-cta > .dropdown > .option');
+
+let specialtyFilterBtn = document.getElementById('filterBtn-specialty');
+let regionFilterBtn = document.getElementById('filterBtn-region');
 
 let mobileFilter = document.querySelector('.mobile-filter__container');
 let mobileFilterItems = document.querySelectorAll('.popup-container > .option');
@@ -20,10 +23,9 @@ let popupTextArray = document.querySelectorAll('#text');
 let str = document.getElementById('data').dataset.people;
 let data = JSON.parse(str);
 
-console.log(data);
-
 // ----- Set Active Variable -----
-const retrieveActiveFilterOption = () => {
+const retrieveActiveFilterOption = (type) => {
+
   active = window.innerWidth > 500 ? document.querySelector('.filter__container > .filter-cta > .dropdown > .active') : document.querySelector('.popup-container > .active');
   return (active);
 }
@@ -73,26 +75,44 @@ const closeMobileFilter = () => {
 }
 
 // ----- Filter Functions -----
+
+const getActiveItems = (e) => {
+  let specialty = document.querySelector('.filter__container > .filter-cta > #specialty > .active');
+
+  let region = document.querySelector('.filter__container > .filter-cta > #region > .active');
+
+  return {specialty, region};
+}
+
+const changeFilterBtnText = () => {
+  let active = getActiveItems();
+  specialtyFilterBtn.innerText = active.specialty.dataset.specialty;
+  regionFilterBtn.innerText = active.region.dataset.region;
+}
+
 const toggleActiveFilters = (e) => {
-  active = retrieveActiveFilterOption();
+  e.stopPropagation();
 
+  let active = getActiveItems();
   let item = e.currentTarget;
-  let specialty = item.dataset.specialty;
+  let type = item.dataset.type;
 
-  active.classList.remove('active');
+  active[type].classList.remove('active');
   item.classList.add('active');
 
   closeFilter();
-  changeMobileFilterBtnText(specialty);
-  changeResults(specialty);
-  closeMobileFilter();
+  changeResults();
+  changeFilterBtnText();
+  // changeMobileFilterBtnText(specialty);
+
+  // closeMobileFilter();
 };
 
 // ----- Result Card Functions -----
-const createHTMLElement = (activeResults) => {
+const insertHTMLElement = (results) => {
   let html = ''
 
-  activeResults.forEach((item) => {
+  results.forEach((item) => {
     html += `
     <div class="box" data-id="${item.id}"" data-specialty="${item.specialty}">
       <img class="avatar" src="${item.image}" onerror="this.src='assets/images/default.png'" alt="{{item.name}} image">
@@ -103,7 +123,8 @@ const createHTMLElement = (activeResults) => {
     </div>`
   });
 
-  return(html)
+  resultsContainer.innerHTML = '';
+  resultsContainer.innerHTML = html;
 };
 
 const addEventListenerToResults = () => {
@@ -131,21 +152,25 @@ const scrollReveal = () => {
   ScrollReveal().reveal('.box', options);
 };
 
-const changeResults = (specialty) => {
-  shuffleData(data);
+const changeResults = () => {
+  let active = getActiveItems();
+  let specialty = active.specialty.dataset.specialty
+  let region = active.region.dataset.region
+  let results
 
-  if (specialty === 'All Specialties') {
-    let activeResults = data;
-    let html = createHTMLElement(activeResults);
-    resultsContainer.innerHTML = '';
-    resultsContainer.innerHTML = html;
+  if (specialty === 'All Specialties' && region === 'All Regions') {
+    results = data;
+  } else if (specialty === 'All Specialties') {
+    results = data.filter((item) => item.region === region);
+  } else if (region === 'All Regions') {
+    results = data.filter((item) => item.specialty === specialty);
   } else {
-    let activeResults = data.filter((item) => item.specialty === specialty);
-    let html = createHTMLElement(activeResults);
-    resultsContainer.innerHTML = '';
-    resultsContainer.innerHTML = html;
+    results = data.filter((item) => item.specialty === specialty && item.region === region)
   }
 
+  console.log(results, specialty, region);
+
+  insertHTMLElement(results);
   changeResultsText();
   addEventListenerToResults();
   // scrollReveal();
@@ -167,7 +192,6 @@ const openFilter = (e) => {
 }
 
 const closeFilter = () => {
-  console.log('closeFilter', '-->', dropdown);
   if (dropdown) dropdown.style.display = 'none';
 }
 
@@ -189,4 +213,5 @@ filters.forEach((filter) => {
 })
 
 // ----- onLaunch Functions -----
-changeResults('All Specialties');
+changeResults();
+shuffleData(data);

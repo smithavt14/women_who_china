@@ -157,13 +157,9 @@ a { text-decoration: none; }
   .banner .container .content .header { font-size: 40px; }
   .banner .container .content .subheader { font-size: 16px; }
   .banner .container .content .title { position: absolute; bottom: 0; margin-bottom: 0; }
-<<<<<<< HEAD
-  .banner .container .woman-img { width: 95%; margin-top: 0; }
-  .results .container { justify-content: center; }
-=======
   .banner .container .woman-img { width: 95%; margin-top: auto; }
   .results { width: 95vw; }
->>>>>>> 15166e453641dc91b81a8c48c6e7b3d74a44db3b
+  .results .container { justify-content: center; }
   .results .filter__container { flex-wrap: wrap; }
   .results .filter__container .option { margin: 8px auto; }
   .results .container .box { width: 100%; margin: 8px 0; padding: 0 16px; }
