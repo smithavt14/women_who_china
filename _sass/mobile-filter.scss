@@ -1,11 +1,12 @@
 .mobile-filter__container {
   display: none;
+  justify-content: space-between;
   width: 100%;
   padding: 20px 0;
 
   .btn {
     height: 50px;
-    width: 100%;
+    width: 48%;
     background: white;
     border-radius: 5px;
     display: flex;

@@ -98,13 +98,13 @@ $content-max-width: 1120px;
 
   .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
 
     .box {
       opacity: 1;
       height: 125px;
-      width: 325px;
+      width: 340px;
       background: white;
       box-sizing: border-box;
       display: flex;
