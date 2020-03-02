@@ -1,14 +1,24 @@
 <div class="mobile-filter__container">
-  <div class="btn">
-    All Specialities
-  </div>
+  <div class="btn" id="mobile-btn-specialty" data-type="specialty">All Specialities</div>
+  <div class="btn" id="mobile-btn-region" data-type="region">All Regions</div>
 
-  <div class="popup-container">
+
+  <div class="popup-container" id="popup-specialty">
     {% for item in page.specialty %}
       {% if item == 'All Specialties' %}
-        <div data-specialty="{{item}}" class="option active">{{item}}</div>
+        <div data-specialty="{{item}}" data-type="specialty" class="option active">{{item}}</div>
       {% else %}
-        <div data-specialty="{{item}}" class="option">{{item}}</div>
+        <div data-specialty="{{item}}" data-type="specialty" class="option">{{item}}</div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="popup-container" id="popup-region">
+    {% for item in page.region %}
+      {% if item == 'All Regions' %}
+        <div data-region="{{item}}" data-type="region" class="option active">{{item}}</div>
+      {% else %}
+        <div data-region="{{item}}" data-type="region" class="option">{{item}}</div>
       {% endif %}
     {% endfor %}
   </div>

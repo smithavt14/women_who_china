@@ -10,24 +10,19 @@ let filterItems = document.querySelectorAll('.filter__container > .filter-cta > 
 let specialtyFilterBtn = document.getElementById('filterBtn-specialty');
 let regionFilterBtn = document.getElementById('filterBtn-region');
 
-let mobileFilter = document.querySelector('.mobile-filter__container');
+let mobileFilterPopups = document.querySelectorAll('.mobile-filter__container > .popup-container');
 let mobileFilterItems = document.querySelectorAll('.popup-container > .option');
-let mobileFilterBtn = document.querySelector('.results > .mobile-filter__container > .btn');
-let mobileFilterPopUp = document.querySelector('.popup-container');
+let mobileFilterBtns = document.querySelectorAll('.results > .mobile-filter__container > .btn');
 
 let resultsText = document.querySelector('.results > .title');
 let resultsContainer = document.querySelector('.results > .container');
-
-let popupTextArray = document.querySelectorAll('#text');
 
 let str = document.getElementById('data').dataset.people;
 let data = JSON.parse(str);
 
 // ----- Set Active Variable -----
-const retrieveActiveFilterOption = (type) => {
-
-  active = window.innerWidth > 500 ? document.querySelector('.filter__container > .filter-cta > .dropdown > .active') : document.querySelector('.popup-container > .active');
-  return (active);
+const isMobile = () => {
+  return window.innerWidth <= 500
 }
 
 const shuffleData = (data) => {
@@ -59,29 +54,39 @@ const closeProfilePopUp = () => {
   blur.style.display = 'none';
   delete blur.dataset.id;
 
-  !!id ? popup.style.display = 'none' : mobileFilterPopUp.style.bottom = '-40vh';
+  !!id ? popup.style.display = 'none' : closeMobileFilter();
 };
 
 
 // ----- Mobile Filter Functions -----
 const openMobileFilter = (e) => {
+  let btn = e.currentTarget
+  let type = btn.dataset.type
+  let filter = document.getElementById(`popup-${type}`);
+
   blur.style.display = 'unset';
-  mobileFilterPopUp.style.bottom = '0';
+  filter.style.bottom = '0';
 }
 
 const closeMobileFilter = () => {
+  mobileFilterPopups.forEach((filter) => {
+    filter.style.bottom = '-40vh';
+  });
+
   blur.style.display = 'none';
-  mobileFilterPopUp.style.bottom = '-40vh';
 }
 
-// ----- Filter Functions -----
-
+// ----- Filter Functions -----I
 const getActiveItems = (e) => {
-  let specialty = document.querySelector('.filter__container > .filter-cta > #specialty > .active');
+  if (isMobile()) {
+    specialty = document.querySelector('#popup-specialty > .active');
+    region = document.querySelector('#popup-region > .active');
+  } else {
+    specialty = document.querySelector('#specialty > .active');
+    region = document.querySelector('#region > .active');
+  }
 
-  let region = document.querySelector('.filter__container > .filter-cta > #region > .active');
-
-  return {specialty, region};
+  return { specialty, region };
 }
 
 const changeFilterBtnText = () => {
@@ -100,15 +105,12 @@ const toggleActiveFilters = (e) => {
   active[type].classList.remove('active');
   item.classList.add('active');
 
-  closeFilter();
-  changeResults();
-  changeFilterBtnText();
-  // changeMobileFilterBtnText(specialty);
+  isMobile() ? closeMobileFilter() : closeFilter();
+  isMobile() ? changeMobileFilterBtnText() : changeFilterBtnText();
 
-  // closeMobileFilter();
+  changeResults();
 };
 
-// ----- Result Card Functions -----
 const insertHTMLElement = (results) => {
   let html = ''
 
@@ -140,8 +142,13 @@ const changeResultsText = () => {
   resultsText.innerHTML = `SHOWING ${cards.length} RESULTS`;
 };
 
-const changeMobileFilterBtnText = (specialty) => {
-  mobileFilterBtn.innerHTML = specialty
+const changeMobileFilterBtnText = () => {
+  let active = getActiveItems();
+  let region = active.region.dataset.region;
+  let specialty = active.specialty.dataset.specialty;
+
+  document.getElementById('mobile-btn-specialty').innerText = specialty
+  document.getElementById('mobile-btn-region').innerText = region
 };
 
 const scrollReveal = () => {
@@ -168,19 +175,11 @@ const changeResults = () => {
     results = data.filter((item) => item.specialty === specialty && item.region === region)
   }
 
-  console.log(results, specialty, region);
-
   insertHTMLElement(results);
   changeResultsText();
   addEventListenerToResults();
-  // scrollReveal();
+  scrollReveal();
 };
-
-const shortenText = () => {
-  popupTextArray.forEach((text) => {
-    text.innerHTML = text.innerHTML.substring(0, 250);
-  })
-}
 
 const openFilter = (e) => {
   closeFilter();
@@ -204,13 +203,15 @@ mobileFilterItems.forEach((item) => {
   item.addEventListener('click', toggleActiveFilters);
 });
 
-blur.addEventListener('click', closeProfilePopUp);
-
-mobileFilterBtn.addEventListener('click', openMobileFilter);
+mobileFilterBtns.forEach((item) => {
+  item.addEventListener('click', openMobileFilter);
+});
 
 filters.forEach((filter) => {
   filter.addEventListener('click', openFilter);
-})
+});
+
+blur.addEventListener('click', closeProfilePopUp);
 
 // ----- onLaunch Functions -----
 changeResults();
