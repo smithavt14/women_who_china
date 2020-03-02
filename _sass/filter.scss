@@ -16,12 +16,11 @@
     align-items: center;
     box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25);
     transition: all .25s linear;
-    color: $light-red;
+    color: $dark-red;
     position: relative;
     box-sizing: border-box;
 
     &:hover {
-      color: $dark-red;
       box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25);
       cursor: pointer;
     }
