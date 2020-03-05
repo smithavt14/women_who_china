@@ -120,7 +120,7 @@ a { text-decoration: none; }
 
 .mobile-filter__container { display: none; justify-content: space-between; width: 100%; padding: 20px 0; }
 
-.mobile-filter__container .btn { height: 50px; width: 48%; background: white; border-radius: 5px; display: flex; justify-content: center; align-items: center; box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25); transition: all .25s linear; color: #FF1A2E; }
+.mobile-filter__container .btn { height: 50px; width: 48%; text-align: center; background: white; border-radius: 5px; display: flex; justify-content: center; align-items: center; box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25); transition: all .25s linear; color: #FF1A2E; }
 
 .mobile-filter__container .btn:hover { box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25); cursor: pointer; }
 

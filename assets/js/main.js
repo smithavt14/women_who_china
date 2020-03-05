@@ -168,11 +168,11 @@ const changeResults = () => {
   if (specialty === 'All Specialties' && region === 'All Regions') {
     results = data;
   } else if (specialty === 'All Specialties') {
-    results = data.filter((item) => item.region === region);
+    results = data.filter((item) => item.new_region === region);
   } else if (region === 'All Regions') {
     results = data.filter((item) => item.specialty === specialty);
   } else {
-    results = data.filter((item) => item.specialty === specialty && item.region === region)
+    results = data.filter((item) => item.specialty === specialty && item.new_region === region)
   }
 
   insertHTMLElement(results);
@@ -214,5 +214,5 @@ filters.forEach((filter) => {
 blur.addEventListener('click', closeProfilePopUp);
 
 // ----- onLaunch Functions -----
-changeResults();
 shuffleData(data);
+changeResults();
