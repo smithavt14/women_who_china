@@ -3,10 +3,12 @@
 body {
   margin: 0;
   background: $white;
-  font-family: $font;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 $banner-width: 100vw;
@@ -14,7 +16,7 @@ $banner-height: 80vh;
 .banner {
   height: 80vh;
   width: $banner-width;
-  background: $dark-red;
+  background: white;
   position: relative;
   display: flex;
   overflow: hidden;
@@ -23,46 +25,62 @@ $banner-height: 80vh;
   align-items: center;
   justify-content: center;
 
-  $radius: $banner-width / 2;
-  .ellipsis {
-    height: $radius * 2;
-    width: $radius * 2;
-    border-radius: 50%;
-    background: $light-red;
-    position: absolute;
-    bottom: -$radius;
-    right: -$radius;
-  }
-
   .container {
     width: 90vw;
-    margin-top: 10%;
-    height: 60%;
+    height: 80%;
     max-width: 1120px;
     display: flex;
     justify-content: space-between;
     z-index: 1;
     position: relative;
+    align-items: center;
 
-    .woman-img {
-      width: 45%;
-      margin-top: auto;
+    .background-rec {
+      position: absolute;
+      right: -64px;
+      opacity: .2;
+      z-index: -1;
+      transform: scale(0.9);
+    }
+
+    .banner-image {
+      width: 48%;
+      height: 100%;
+      border-radius: 5px;
+      object-fit: cover;
+      // clip-path: polygon(100% 0, 100% 100%, 0 100%, 10% 0%);
     }
 
     .content {
-      width: 50%;
-      color: $white;
+      width: 48%;
       display: flex;
       flex-direction: column;
+      color: $black;
+      flex-shrink: 0;
+
+      .logo {
+        font-family: 'Courgette', cursive;
+        color: $dark-red;
+        font-size: 24px;
+        margin-bottom: 64px;
+      }
 
       .header {
         font-size: 48px;
         font-weight: bold;
       }
 
+      .header-black {
+        color: $black;
+      }
+
+      .header-red {
+        color: $dark-red;
+      }
+
       .subheader {
-        font-size: 24px;
-        margin-top: 16px;
+        font-size: 20px;
+        margin: 16px 0 32px 0;
         font-weight: 200;
       }
 
@@ -74,6 +92,41 @@ $banner-height: 80vh;
         margin-bottom: 10px;
         display: flex;
         align-items: flex-end;
+      }
+
+      .btn-container {
+        width: 100%;
+        display: flex;
+        margin-top: 32px;
+
+        .btn {
+          padding: 24px 32px;
+          color: $white;
+          font-weight: bold;
+          border-radius: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25);
+          transition: all .25s linear;
+          font-family: 'Montserrat', sans-serif;
+          margin-right: 16px;
+          scroll-behavior: smooth;
+
+          &:hover {
+            box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25);
+            cursor: pointer;
+          }
+        }
+
+        .btn-submit {
+          background: $dark-red;
+        }
+
+        .btn-search {
+          background: $light-red;
+          color: $dark-red;
+        }
       }
     }
   }
