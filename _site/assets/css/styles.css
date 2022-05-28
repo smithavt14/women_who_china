@@ -10,11 +10,11 @@ body { margin: 0; background: #FBFBFB; font-family: 'Montserrat', sans-serif; fo
 
 .banner .container .background-rec { position: absolute; right: -64px; opacity: .2; z-index: -1; transform: scale(0.8); }
 
-.banner .container .banner-right { width: 90%; }
+.banner .container .banner-right { width: 90%; display: flex; flex-direction: column; align-items: center; }
 
 .banner .container .banner-right .banner-image { width: 90%; height: 100%; border-radius: 5px; object-fit: cover; }
 
-.banner .container .banner-right .banner-subtitle { width: 90%; font-style: italic; text-align: center; font-size: 12px; }
+.banner .container .banner-right .banner-subtitle { width: 90%; font-style: italic; text-align: center; font-size: 12px; margin-top: 8px; }
 
 .banner .container .content { width: 48%; display: flex; flex-direction: column; color: #353636; flex-shrink: 0; }
 
@@ -82,7 +82,7 @@ a { text-decoration: none; }
 
 @font-face { font-family: Lato Bold; src: url(../fonts/Lato-Bold.ttf); font-weight: bold; }
 
-*body { font-family: 'Montserrat', sans-serif; font-weight: normal; }
+body { font-family: 'Montserrat', sans-serif; font-weight: normal; }
 
 .header__container { position: absolute; top: 0; height: 120px; width: 100vw; display: flex; justify-content: center; z-index: 2; }
 
