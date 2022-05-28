@@ -8,9 +8,13 @@ body { margin: 0; background: #FBFBFB; font-family: 'Montserrat', sans-serif; fo
 
 .banner .container { width: 90vw; height: 80%; max-width: 1120px; display: flex; justify-content: space-between; z-index: 1; position: relative; align-items: center; }
 
-.banner .container .background-rec { position: absolute; right: -64px; opacity: .2; z-index: -1; transform: scale(0.9); }
+.banner .container .background-rec { position: absolute; right: -64px; opacity: .2; z-index: -1; transform: scale(0.8); }
 
-.banner .container .banner-image { width: 48%; height: 100%; border-radius: 5px; object-fit: cover; }
+.banner .container .banner-right { width: 90%; }
+
+.banner .container .banner-right .banner-image { width: 90%; height: 100%; border-radius: 5px; object-fit: cover; }
+
+.banner .container .banner-right .banner-subtitle { width: 90%; font-style: italic; text-align: center; font-size: 12px; }
 
 .banner .container .content { width: 48%; display: flex; flex-direction: column; color: #353636; flex-shrink: 0; }
 
@@ -26,7 +30,7 @@ body { margin: 0; background: #FBFBFB; font-family: 'Montserrat', sans-serif; fo
 
 .banner .container .content .title { flex-grow: 1; font-size: 16px; font-style: normal; font-weight: normal; margin-bottom: 10px; display: flex; align-items: flex-end; }
 
-.banner .container .content .btn-container { width: 100%; display: flex; margin-top: 32px; }
+.banner .container .content .btn-container { width: 100%; display: flex; margin-top: 16px; }
 
 .banner .container .content .btn-container .btn { padding: 24px 32px; color: #FBFBFB; font-weight: bold; border-radius: 5px; display: flex; justify-content: center; align-items: center; box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.25); transition: all .25s linear; font-family: 'Montserrat', sans-serif; margin-right: 16px; scroll-behavior: smooth; }
 
@@ -108,7 +112,7 @@ a { text-decoration: none; }
 
 .popup__container .top .linkedin-btn .text { margin-left: 8px; font-size: 16px; }
 
-.popup__container .bottom { height: 60%; display: flex; flex-direction: column; flex-grow: 1; position: relative; padding: 20px; box-sizing: border-box; }
+.popup__container .bottom { height: 60%; display: flex; flex-direction: column; flex-grow: 1; position: relative; padding: 20px; box-sizing: border-box; overflow: scroll; }
 
 .popup__container .bottom .container { flex: 1; display: flex; box-sizing: border-box; position: relative; margin-bottom: 10px; }
 
@@ -116,7 +120,7 @@ a { text-decoration: none; }
 
 .popup__container .bottom .container .flex-box .header { font-size: 24px; font-weight: bold; color: #FFCAC3; }
 
-.popup__container .bottom .container .flex-box .text { font-size: 16px; font-weight: 100; color: #353636; margin-top: 8px; max-height: 100px; overflow: scroll; }
+.popup__container .bottom .container .flex-box .text { font-size: 16px; font-weight: 100; color: #353636; margin-top: 8px; }
 
 .popup__container .link { position: absolute; bottom: 20px; right: 20px; text-decoration: none; color: #FFCAC3; cursor: pointer; transition: all .2s linear; }
 
@@ -148,13 +152,12 @@ a { text-decoration: none; }
 
 .mobile-filter__container .popup-container .active { color: #FF1A2E; border-bottom: 1px solid #FF1A2E; }
 
-@media screen and (max-width: 1023px) and (min-width: 501px) { .banner .ellipsis { height: 120vw; width: 120vw; bottom: -60vw; right: -60vw; }
-  .banner .container { width: 80%; height: 80%; flex-direction: column; align-items: flex-end; }
-  .banner .container .content { width: 100%; height: 50%; justify-content: flex-end; }
-  .banner .container .content .header { font-size: 40px; }
-  .banner .container .content .subheader { font-size: 24px; }
+@media screen and (max-width: 1023px) and (min-width: 501px) { .banner { height: 75vh; }
+  .banner .container { width: 85vw; flex-direction: column; align-items: flex-end; }
+  .banner .container .background-rec { display: none; }
+  .banner .container .banner-right { display: none; }
+  .banner .container .content { width: 100%; justify-content: flex-end; margin: 0 16px; }
   .banner .container .content .title { position: absolute; bottom: 0; }
-  .banner .container .woman-img { width: 55%; }
   .results .container { justify-content: space-between; }
   .results .container .box { margin: 16px; width: 45%; } }
 
@@ -164,18 +167,18 @@ a { text-decoration: none; }
 
 .footer__container .container .btn-container .submit-btn { margin: 16px 0; font-size: 16px; padding: 16px; }
 
-@media screen and (max-width: 500px) { .header__container { height: 100px; }
-  .header__container .container { display: flex; position: relative; align-items: center; justify-content: flex-end; height: 90%; }
-  .header__container .container .logo { display: none; }
-  .header__container .container .submit-btn { font-size: 16px; padding: 12px; }
-  .banner { height: 90vh; }
-  .banner .ellipsis { height: 180vw; width: 180vw; bottom: -90vw; right: -90vw; }
-  .banner .container { margin-top: 20%; height: 80%; width: 90%; flex-direction: column; align-items: flex-end; justify-content: space-around; }
+@media screen and (max-width: 500px) { .banner { height: 75vh; }
+  .banner .container { width: 90%; flex-direction: column; align-items: flex-end; justify-content: space-around; }
+  .banner .container .background-rec { display: none; }
+  .banner .container .banner-right .banner-image { display: none; }
+  .banner .container .banner-right .banner-subtitle { display: none; }
   .banner .container .content { width: 100%; }
+  .banner .container .content .logo { margin: 32px 0; }
   .banner .container .content .header { font-size: 40px; }
-  .banner .container .content .subheader { font-size: 16px; }
   .banner .container .content .title { position: absolute; bottom: 0; margin-bottom: 0; }
-  .banner .container .woman-img { width: 95%; margin-top: auto; }
+  .banner .container .content .btn-container { display: block; }
+  .banner .container .content .btn-container .btn { margin: 0 0 32px 0; }
+  .banner .container .content .btn-container .btn-search { display: none; }
   .results { width: 95vw; }
   .results .container { justify-content: center; }
   .results .filter__container { flex-wrap: wrap; }

@@ -35,20 +35,32 @@ $banner-height: 80vh;
     position: relative;
     align-items: center;
 
+
     .background-rec {
       position: absolute;
       right: -64px;
       opacity: .2;
       z-index: -1;
-      transform: scale(0.9);
+      transform: scale(0.8);
     }
 
-    .banner-image {
-      width: 48%;
-      height: 100%;
-      border-radius: 5px;
-      object-fit: cover;
-      // clip-path: polygon(100% 0, 100% 100%, 0 100%, 10% 0%);
+    .banner-right {
+      width: 90%;
+
+        .banner-image {
+          width: 90%;
+          height: 100%;
+          border-radius: 5px;
+          object-fit: cover;
+          // clip-path: polygon(100% 0, 100% 100%, 0 100%, 10% 0%);
+        }
+
+        .banner-subtitle {
+          width: 90%;
+          font-style: italic;
+          text-align: center;
+          font-size: 12px;
+        }
     }
 
     .content {
@@ -97,7 +109,7 @@ $banner-height: 80vh;
       .btn-container {
         width: 100%;
         display: flex;
-        margin-top: 32px;
+        margin-top: 16px;
 
         .btn {
           padding: 24px 32px;
