@@ -93,6 +93,7 @@ $width: $height * 2;
     position: relative;
     padding: 20px;
     box-sizing: border-box;
+    overflow: scroll;
 
     .container {
       flex: 1;
@@ -117,8 +118,6 @@ $width: $height * 2;
           font-weight: 100;
           color: $black;
           margin-top: 8px;
-          max-height: 100px;
-          overflow: scroll;
         }
       }
     }

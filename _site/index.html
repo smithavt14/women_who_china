@@ -19,36 +19,49 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="icon" type="image/png" href="./favicon.png">
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-  </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Montserrat:wght@400;800&display=swap"
+  rel="stylesheet">
+</head>
   <body>
-    <div class="header__container">
-  <div class="container">
-    <img class="logo" src="./assets/images/logo.svg" alt="women who china logo">
-    <a target="_blank" href="https://women-who-china.typeform.com/to/h12MdH"><div class="submit-btn">Submit a Profile</div></a>
-  </div>
-</div>
-
     <div class="banner">
-  <div class="ellipsis"></div>
 
   <div class="container">
+    <svg class="background-rec" width="404" height="784" fill="none" viewBox="0 0 404 784">
+      <defs>
+        <pattern id="e229dbec-10e9-49ee-8ec3-0286ca089edf" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+        </pattern>
+      </defs>
+      <rect width="404" height="784" fill="url(#e229dbec-10e9-49ee-8ec3-0286ca089edf)" />
+    </svg>
 
     <!-- Left Side Content Container -->
     <div class="content">
-      <div class="header">China Marketing Specialists</div>
-      <div class="subheader">Looking for a speaker, contributor, or services related to marketing in China?<br><br>Discover women in the industry by browsing the profiles listed, or search according to speciality or region. </div>
-
+      <div class="logo">Women in China Marketing</div>
+      <div class="header header-black">Find a Leader in</div><div class="header header-red">China Marketing</div>
+      <div class="subheader">Looking for a speaker, contributor, or services related to marketing in China? Discover women in the industry by browsing the profiles listed, or search according to speciality or region. </div>
+      <div class="btn-container">
+        <a class="btn btn-submit" target="_blank" href="https://women-who-china.typeform.com/to/h12MdH">Submit a Profile</a>
+        <a class="btn btn-search" href="#filter">Start the Search</a>
+      </div>
     </div>
-
-    <!-- Right Side Image -->
-    <img class="woman-img" src="./assets/images/woman.svg" alt="Women who China image">
+    <div class="banner-right">
+      <img class="banner-image" src="../assets/images/banner.jpeg" alt="">
+      <div class="banner-subtitle">Photographer: Jenna Ohrnberg; International Professional Women’s Society, Digital Marketing Trends & Predictions for 2021</div>
+    </div>
   </div>
 </div>
 
 <!-- Results Container -->
 <div class="results">
 
-  <div class="filter__container">
+  <div class="filter__container" id="filter">
   <div class="filter-cta" data-type="specialty">
     <div id='filterBtn-specialty'>All Specialties</div>
     <div class="dropdown" id="specialty">
